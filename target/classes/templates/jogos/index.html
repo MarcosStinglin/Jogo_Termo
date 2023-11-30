@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <html xmlns:th="http://www.thymeleaf.org" lang="en"></html>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Termo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@1,500&family=Inter:wght@700&family=Josefin+Sans:wght@400;700&family=Montserrat:wght@600&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e6a4e2a7d4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div type="text" id="palavra-resposta" th:text="*{jogo.palavra}" style="display: none;"></div>
+  <header class="cabecalho">
+    <div class="cabeca">
+    <div class="cabeca">
+    <button class="botao" onclick="toggleDiv()">
+        <img src="/questao.png" alt="botao_regras" class="botao_img">
+        <div  id="myDiv" class="card_oculto">
+            <h1>Regras do Jogo</h1>
+            <p>Descubra a palavra certa em 6 tentativas. Depois de cada tentativa, as peças msotram o quão perto você está da solução.</p>
+            <p>A letra quando em verde faz parte da palavra e está na posição correta.</p>
+            <p>A letra em amarelo faz parte da palavra mas em outra posição</p>
+            <p>A letra em preto não faz parte da palavra.</p>
+            <p>Os Acentos são preenchidos automaticamente, e não são considerados nas dicas.</p>
+        </div><!--card_oculto-->
+    </button>
+    <div id="idVenci" class="botao_vitoria">
+        <h1 class="botao_vitoria-titulo">Parabéns! você acertou a palavra!</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+        <a class="botao_vitoria_jogarnovamente" href="jogos">Jogar Novamente</a>
+    </div><!--botao_vitoria-->
+    <div id="idPerdi" class="botao_derrota">
+        <h1 class="botao_derrota_titulo">Não foi dessa vez !</h1>
+        <a class="botao_derrota_tentar" href="jogos">Tentar Novamente</a>
+    </div><!--botao_derrota-->
+    </div><!--cabeca-->
+    </div><!--cabeca-->
+</header>
+<main>
+    <div class="linha_acima_game">
+        <h1 class="nome_jogo">Termo</h1>
+    </div>
+    <div class="container">
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha1" pattern="[0-9]" id="linha1-coluna1" maxlength="1"></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha1" pattern="[0-9]" id="linha1-coluna2" maxlength="1"></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha1" pattern="[0-9]" id="linha1-coluna3" maxlength="1"></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha1" pattern="[0-9]" id="linha1-coluna4" maxlength="1"></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha1" pattern="[0-9]" id="linha1-coluna5" maxlength="1"></div>
+    </div><!--container-->
+    <div class="container2">
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha2" pattern="[0-9]" id="linha2-coluna2" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha2" pattern="[0-9]" id="linha2-coluna3" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha2" pattern="[0-9]" id="linha2-coluna4" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha2" pattern="[0-9]" id="linha2-coluna5" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha2" pattern="[0-9]" id="linha2-coluna1" maxlength="1" readonly></div>
+    </div><!--container-->
+    <div class="container3">
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha3" pattern="[0-9]" id="linha3-coluna1" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha3" pattern="[0-9]" id="linha3-coluna2" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha3" pattern="[0-9]" id="linha3-coluna3" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha3" pattern="[0-9]" id="linha3-coluna4" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha3" pattern="[0-9]" id="linha3-coluna5" maxlength="1" readonly></div>
+    </div><!--container-->
+    <div class="container4">
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha4" pattern="[0-9]" id="linha4-coluna1" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha4" pattern="[0-9]" id="linha4-coluna2" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha4" pattern="[0-9]" id="linha4-coluna3" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha4" pattern="[0-9]" id="linha4-coluna4" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha4" pattern="[0-9]" id="linha4-coluna5" maxlength="1" readonly></div>
+    </div><!--container-->
+    <div class="container5">
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha5" pattern="[0-9]" id="linha5-coluna1" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha5" pattern="[0-9]" id="linha5-coluna2" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha5" pattern="[0-9]" id="linha5-coluna3" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha5" pattern="[0-9]" id="linha5-coluna4" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha5" pattern="[0-9]" id="linha5-coluna5" maxlength="1" readonly></div>
+    </div><!--container-->
+    <div class="container6">
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha6" pattern="[0-9]" id="linha6-coluna1" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha6" pattern="[0-9]" id="linha6-coluna2" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha6" pattern="[0-9]" id="linha6-coluna3" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha6" pattern="[0-9]" id="linha6-coluna4" maxlength="1" readonly></div>
+        <div class="elemento" ><input class="espaco_letra" type="text" name="linha6" pattern="[0-9]" id="linha6-coluna5" maxlength="1" readonly></div>
+    </div><!--container-->
+</main>
+    
+    <script src="/palavras-service.js">init()</script>
+
+</body>
+</html>
+
+<script>
+    function toggleDiv() {
+        var div = document.getElementById("myDiv");
+
+        // Verifica se a div está visível
+        if (div.style.display === "none" || div.style.display === "") {
+            // Se estiver oculta, exibe
+            div.style.display = "block";
+        } else {
+            // Se estiver visível, oculta
+            div.style.display = "none";
+        }
+    }
+
+    function clickOutsideHandler(event) {
+            var div = document.getElementById("myDiv");
+
+            // Verifica se o clique ocorreu fora da div
+            if (!div.contains(event.target)) {
+                // Oculta a div
+                div.style.display = "none";
+
+                // Remove o ouvinte de eventos para não interferir em futuros cliques
+                document.removeEventListener('click', clickOutsideHandler);
+            }
+        }
+</script>

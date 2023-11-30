@@ -1,0 +1,63 @@
+@import url(./reset.css);
+@import url(./jogo.css);
+
+:root {
+    --cor-de-fundo: #6e5c62;
+    --cor-do-titulo: #E0F4FF;
+    --cor-de-acao: #312a2c;
+    --cor-do-copy:#ffffff;
+    --fonte-principal: 'Mitr', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    font-weight: 400;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to right, var(--cor-de-fundo),var(--cor-de-acao));
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5.5rem;
+    margin: 3em 0em 0em 0em;
+    font-weight: 200;
+    color: var(--cor-do-titulo);
+}
+
+.texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 15px;
+    height: 1.5em;
+    width: 7.4em;
+    top: 1.5em;
+    border-radius: 2em;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.562);
+}
+
+.botao_iniciar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    margin: 0.5em 0em 0em 0em;
+    text-decoration: none;
+    color: var(--cor-do-titulo);
+    transition: all 0.3s ease-in-out;
+}
+
+.botao_iniciar:hover {
+    text-decoration: underline;
+}
+
+.copy {
+    margin: 12em 0em 0em 0.5em;
+    color: var(--cor-do-copy);
+}

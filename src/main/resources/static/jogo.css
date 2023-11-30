@@ -1,0 +1,307 @@
+:root {
+    --cor-de-palavra-certa:#3aa394;
+    --cor-palvra-amarela:#d3ad69;
+    --cor-de-fundo: #6e5c62;
+    --cor-de-borda-posacao:#312a2c;
+    --cor-de-letra: #DDF2FD;
+    --cor-de-botao:white;
+    --cor-de-borda: #4C4347;
+    --cor-de-fundo-card:#312B2D;
+    --cor-de-texto-card:#BBB;
+    --cor-de-falha:#B31312;
+    --fonte-principal: 'Mitr', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    font-family:var(--fonte-principal);
+    width: 100%;
+    height: 100vh;
+    background-color: var(--cor-de-fundo);
+}
+
+.cabecalho {
+    width: 98vw;
+}
+
+.cabeca {
+    display: flex;
+    width: 100%;
+    margin: 0.5em 0em 0em 0em;
+}
+
+.seta {
+    width: 30px;
+    margin: 1em 0.2em 0em 0em;
+    transition: all 0.3s ease-in-out;
+    color: var(--cor-de-borda);
+}
+
+.botao_texto {
+    color: var(--cor-de-botao);
+    margin: -0.5em 0em 0em 0em;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.botao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0em 0em 0em 85em;
+    background-color: var(--cor-de-fundo);
+    height: 70px;
+    outline: 0;
+    border: 5px solid var(--cor-de-botao);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.botao_barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0em 0em 0em 1em;
+    background-color: var(--cor-de-fundo);
+    height: 70px;
+    outline: 0;
+    border: 5px solid var(--cor-de-botao);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.botao_vitoria {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40em;
+    height: 20em;
+    border-radius: 10px;
+    background-color: var(--cor-de-fundo-card);
+    color: var(--cor-de-texto-card);
+    z-index: 800;
+    transition: all 0.3s ease-in-out;
+}
+
+.botao_vitoria_incio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-de-letra);
+    text-decoration: none;
+    font-size: 1.3em;
+    margin: 0em 0em 2em 0em;
+    height: 2.5em;
+    width: 10em;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.botao_vitoria_jogarnovamente {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-de-letra);
+    text-decoration: none;
+    font-size: 1.3em;
+    height: 2.5em;
+    width: 10em;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.botao_vitoria_incio:hover {
+    background-color: var(--cor-de-palavra-certa);
+}
+
+.botao_vitoria_jogarnovamente:hover {
+    background-color: var(--cor-de-palavra-certa);
+}
+
+.botao_derrota {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40em;
+    height: 20em;
+    border-radius: 10px;
+    margin: 0em 0em 2em 0em;
+    background-color: var(--cor-de-fundo-card);
+    color: var(--cor-de-texto-card);
+    z-index: 801;
+    transition: all 0.3s ease-in-out;
+}
+
+.botao_derrota_tentar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--cor-de-fundo);
+    color: var(--cor-de-letra);
+    text-decoration: none;
+    font-size: 1.3em;
+    margin: 0em 0em 1em 0em;
+    height: 2.5em;
+    width: 10em;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.botao_derrota_tentar:hover {
+    background-color: var(--cor-de-falha);
+}
+
+.linha_acima_game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nome_jogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.527);
+    color: var(--cor-de-letra);
+    border-radius: 2em;
+    width: 5em;
+    height: 1.5em;
+    font-weight: 800;
+    font-size: 1.5em;
+}
+
+.botao_img {
+    width: 50px;
+     /* Converter a imagem para tons de cinza */
+     filter:invert(100%);
+}
+
+.card_oculto {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 37em;
+    height: 40em;
+    border-radius: 5%;
+    background-color: var(--cor-de-fundo-card);
+    color: var(--cor-de-texto-card);
+    z-index: 799;
+    transition: all 0.3s ease-in-out;
+}
+
+.card_oculto h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin: 1em 0em 0em 0em;
+}
+
+.card_oculto p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 1em 1em 1em 1em;
+}
+
+.container {
+    margin: 1em 0em 0em 0em;
+}
+
+.container,.container2,.container3,.container4,.container5,.container6 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elemento {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3em;
+    height: 3em;
+    margin: 0em 0.4em 0.4em 0.4em;
+    border: 10px solid var(--cor-de-borda);
+    border-radius: 10px;
+}
+
+.espaco_letra  {
+    font-family: var(--fonte-principal);
+    color: var(--cor-de-letra);
+    background-color: var(--cor-de-borda);
+    width: 2.9em;
+    height: 2.85em;
+    font-size: 1.5em;
+    line-height: 1em;
+    border-radius: 0.40em;
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.elemento .espaco_letra:valid {
+    background-color: var(--cor-de-fundo);
+}
+
+.bloco_verde {
+    font-family: var(--fonte-principal);
+    color: var(--cor-de-letra);
+    background-color: var(--cor-de-palavra-certa);
+    width: 2.9em;
+    height: 2.85em;
+    font-size: 1.5em;
+    line-height: 1em;
+    border-radius: 0.40em;
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.bloco_amarelo {
+    font-family: var(--fonte-principal);
+    color: var(--cor-de-letra);
+    background-color: var(--cor-palvra-amarela);
+    width: 2.9em;
+    height: 2.85em;
+    font-size: 1.5em;
+    line-height: 1em;
+    border-radius: 0.40em;
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: 0;
+    transition: all 0.3s ease-in-out;
+}
